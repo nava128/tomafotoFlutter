@@ -96,14 +96,20 @@ class ShowPicture extends StatelessWidget {
 
   final String imgpath;
 
+  showSnapshot(context) {
+    final snackBar = SnackBar(content: Text('En archivo: ${imgpath}'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Esta es su foto !!!')),
+      appBar: AppBar(title: Text('Esta es su foto...')),
       body: Container(
         child: Image.file(File(imgpath), fit: BoxFit.cover),
         width: MediaQuery.of(context).size.width,
       ),
+      bottomNavigationBar: BottomAppBar(child: Text('${imgpath}')),
     );
   }
 }
