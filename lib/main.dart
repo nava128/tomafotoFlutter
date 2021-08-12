@@ -73,7 +73,8 @@ class TakePictureState extends State<TakePicture> {
                       XFile image = await controller.takePicture();
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ShowPicture(image.path)),
+                        MaterialPageRoute(
+                            builder: (context) => ShowPicture(image.path)),
                       );
                     },
                   ),
@@ -95,11 +96,6 @@ class ShowPicture extends StatelessWidget {
   ShowPicture(this.imgpath);
 
   final String imgpath;
-
-  showSnapshot(context) {
-    final snackBar = SnackBar(content: Text('En archivo: ${imgpath}'));
-    ScaffoldMessenger.of(context).showSnackBar(snackBar);
-  }
 
   @override
   Widget build(BuildContext context) {
