@@ -1,12 +1,14 @@
 # TomaFoto
 
-App Flutter para tomar fotos utilizando la cámara del sistema
+App Flutter para tomar fotos utilizando la cámara del sistema.
+
+El componente principal para esta aplicación es el plugin *camera* (https://pub.dev/packages/camera), que permite manipular la cámara del sistema, tanto en Android como en iOS (OJO: el simulador de iOS no  permite usar la cámara!). En este ejemplo veremos cómo tomar fotos, sin embargo, también es posible capturar video.
 
 ## Preparación
 
 Descargue el proyecto y ábralo en su IDE de preferencia. Android Studio y Visual Studio Code son muy apropiadas.
 
->Si tiene problemas con ello, tal vez deba revisar primero: https://github.com/dordonez-ute-moviles/Flutter-Tutorial
+> Si tiene problemas con ello, tal vez deba revisar primero: https://github.com/dordonez-ute-moviles/Flutter-Tutorial
 
 ## Requisitos previos
 
@@ -18,12 +20,10 @@ Descargue el proyecto y ábralo en su IDE de preferencia. Android Studio y Visua
 
   - Para Android, la compatibilidad mínima debe ser API 21 o superior, lo cual debe ser modificado en *./android/build.gradle*, en la sección `defaultConfig`, atributo `minSdkVersion`. 
 
-  - En el caso de iOS, se debe añadir los permisos de uso de la cámara en el archivo *./ios/Runner/Info.plist*:
+  - En el caso de iOS, se debe añadir el permiso de uso de la cámara en el archivo *./ios/Runner/Info.plist*:
   ```xml
   <key>NSCameraUsageDescription</key>
-  <string>Can I use the camera please?</string>
-  <key>NSMicrophoneUsageDescription</key>
-  <string>Can I use the mic please?</string>
+  <string>Necesito tomar fotos!</string>
   ```
 
 ## Programa
